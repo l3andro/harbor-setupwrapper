@@ -6,6 +6,8 @@ services:
     environment:
       - HARBORHOSTNAME=${HARBORHOSTNAME}
       - HARBOR_ADMIN_PASSWORD=${HARBOR_ADMIN_PASSWORD}
+      - SSL_CERT=${SSL_CERT}
+      - SSL_CERT_KEY=${SSL_CERT_KEY}
     volumes:
       - /data:/data:z
       - /etc/registry
