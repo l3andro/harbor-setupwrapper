@@ -1,4 +1,4 @@
-FROM photon:1.0
+FROM photon:2.0
 
 MAINTAINER massimo@it20.info
 
