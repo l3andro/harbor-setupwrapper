@@ -6,6 +6,7 @@ services:
     environment:
       - HARBORHOSTNAME=${HARBORHOSTNAME}
       - HARBOR_ADMIN_PASSWORD=${HARBOR_ADMIN_PASSWORD}
+      - UI_URL_PROTOCOL=${UI_URL_PROTOCOL}
       - SSL_CERT=${SSL_CERT}
       - SSL_CERT_KEY=${SSL_CERT_KEY}
     volumes:
