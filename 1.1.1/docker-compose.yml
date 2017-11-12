@@ -1,7 +1,7 @@
 version: '2'
 services:
   harbor-setupwrapper:
-    image: mreferre/harbor-setupwrapper:1.1.1-1
+    image: l3andro/harbor-setupwrapper
     container_name: harbor-setupwrapper
     environment:
       - HARBORHOSTNAME=${HARBORHOSTNAME}
@@ -19,7 +19,7 @@ services:
     command: ["/harbor/harbor-setupwrapper.sh"]
     network_mode: "none"
   log:
-    image: vmware/harbor-log:v1.1.1
+    image: vmware/harbor-log:v1.2.2
     container_name: harbor-log
     restart: always
     volumes:
@@ -29,7 +29,7 @@ services:
     networks:
       - harbor
   registry:
-    image: vmware/registry:photon-2.6.0
+    image: vmware/registry:2.6.2-photon
     container_name: registry
     restart: always
     volumes:
@@ -50,7 +50,7 @@ services:
     networks:
       - harbor
   mysql:
-    image: vmware/harbor-db:v1.1.1
+    image: vmware/harbor-db:v1.2.2
     container_name: harbor-db
     restart: always
     volumes:
@@ -72,7 +72,7 @@ services:
     networks:
       - harbor
   adminserver:
-    image: vmware/harbor-adminserver:v1.1.1
+    image: vmware/harbor-adminserver:v1.2.2
     container_name: harbor-adminserver
     restart: always
     volumes:
@@ -96,7 +96,7 @@ services:
     networks:
       - harbor
   ui:
-    image: vmware/harbor-ui:v1.1.1
+    image: vmware/harbor-ui:v1.2.2
     container_name: harbor-ui
     restart: always
     volumes:
@@ -121,7 +121,7 @@ services:
     networks:
       - harbor
   jobservice:
-    image: vmware/harbor-jobservice:v1.1.1
+    image: vmware/harbor-jobservice:v1.2.2
     container_name: harbor-jobservice
     restart: always
     volumes:
